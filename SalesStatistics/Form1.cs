@@ -12,17 +12,27 @@ namespace SalesStatistics
 {
     public partial class Form1 : Form
     {
+        private Form2 form2;
+
         public Form1()
         {
             InitializeComponent();
+
+            form2 = new Form2(this);
+
+            form2.FormClosing += new FormClosingEventHandler(form2_FormClosing);
         }
 
         private void writeDataButton_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
             Hide();
-            form2.ShowDialog();
-            Show();
+
+            form2.Show();
+        }
+        
+        private void form2_FormClosing(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

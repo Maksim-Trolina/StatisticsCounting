@@ -30,6 +30,7 @@
         {
             this.textBoxForWritingData = new System.Windows.Forms.TextBox();
             this.enterDataButton = new System.Windows.Forms.Button();
+            this.startMenuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxForWritingData
@@ -53,11 +54,24 @@
             this.enterDataButton.Text = "Ввод";
             this.enterDataButton.UseVisualStyleBackColor = true;
             // 
+            // startMenuButton
+            // 
+            this.startMenuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.startMenuButton.Location = new System.Drawing.Point(651, 12);
+            this.startMenuButton.Name = "startMenuButton";
+            this.startMenuButton.Size = new System.Drawing.Size(137, 35);
+            this.startMenuButton.TabIndex = 2;
+            this.startMenuButton.Text = "Главное меню";
+            this.startMenuButton.UseVisualStyleBackColor = true;
+            this.startMenuButton.Click += new System.EventHandler(this.startMenuButton_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.startMenuButton);
             this.Controls.Add(this.enterDataButton);
             this.Controls.Add(this.textBoxForWritingData);
             this.Name = "Form2";
@@ -71,5 +85,6 @@
 
         private System.Windows.Forms.TextBox textBoxForWritingData;
         private System.Windows.Forms.Button enterDataButton;
+        private System.Windows.Forms.Button startMenuButton;
     }
 }

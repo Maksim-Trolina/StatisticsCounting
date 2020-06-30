@@ -12,9 +12,13 @@ namespace SalesStatistics
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private Form1 form1;
+
+        public Form2(Form1 _form1)
         {
             InitializeComponent();
+
+            form1 = _form1;
         }
 
         private void textBoxForWritingData_KeyPress(object sender, KeyPressEventArgs e)
@@ -39,6 +43,13 @@ namespace SalesStatistics
             {
                 e.Handled = true;
             }
+        }
+
+        private void startMenuButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+
+            form1.Show();
         }
     }
 }
