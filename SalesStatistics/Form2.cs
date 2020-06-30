@@ -16,5 +16,29 @@ namespace SalesStatistics
         {
             InitializeComponent();
         }
+
+        private void textBoxForWritingData_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symbol = e.KeyChar;
+            
+            if(symbol == 44)
+            {
+                string text = textBoxForWritingData.Text;
+
+                IEnumerable<char> commas = text.Where(x => x == ',').Select(x => x);
+
+                if (commas.Count() != 0 || text.Length == 0)
+                {
+                    e.Handled = true;
+                }
+
+                return;
+            }
+
+            if (!char.IsDigit(symbol) && symbol != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

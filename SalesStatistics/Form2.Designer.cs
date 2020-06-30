@@ -35,15 +35,18 @@
             // textBoxForWritingData
             // 
             this.textBoxForWritingData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxForWritingData.Location = new System.Drawing.Point(305, 183);
+            this.textBoxForWritingData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxForWritingData.Location = new System.Drawing.Point(223, 168);
             this.textBoxForWritingData.Name = "textBoxForWritingData";
-            this.textBoxForWritingData.Size = new System.Drawing.Size(170, 20);
+            this.textBoxForWritingData.Size = new System.Drawing.Size(363, 29);
             this.textBoxForWritingData.TabIndex = 0;
+            this.textBoxForWritingData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxForWritingData_KeyPress);
             // 
             // enterDataButton
             // 
             this.enterDataButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.enterDataButton.Location = new System.Drawing.Point(353, 209);
+            this.enterDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.enterDataButton.Location = new System.Drawing.Point(366, 209);
             this.enterDataButton.Name = "enterDataButton";
             this.enterDataButton.Size = new System.Drawing.Size(75, 23);
             this.enterDataButton.TabIndex = 1;

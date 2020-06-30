@@ -35,6 +35,7 @@
             // writeDataButton
             // 
             this.writeDataButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.writeDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.writeDataButton.Location = new System.Drawing.Point(247, 200);
             this.writeDataButton.Name = "writeDataButton";
             this.writeDataButton.Size = new System.Drawing.Size(113, 44);
@@ -46,6 +47,7 @@
             // statisticsCalculationButton
             // 
             this.statisticsCalculationButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statisticsCalculationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statisticsCalculationButton.Location = new System.Drawing.Point(454, 200);
             this.statisticsCalculationButton.Name = "statisticsCalculationButton";
             this.statisticsCalculationButton.Size = new System.Drawing.Size(113, 44);
