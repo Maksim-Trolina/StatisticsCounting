@@ -8,3 +8,4 @@ C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.csproj
 C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.csproj.CoreCompileInputs.cache
 C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.exe
 C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.pdb
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.Form2.resources

@@ -41,6 +41,7 @@
             this.writeDataButton.TabIndex = 0;
             this.writeDataButton.Text = "Записать данные";
             this.writeDataButton.UseVisualStyleBackColor = true;
+            this.writeDataButton.Click += new System.EventHandler(this.writeDataButton_Click);
             // 
             // statisticsCalculationButton
             // 
