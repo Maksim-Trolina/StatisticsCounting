@@ -14,11 +14,15 @@ namespace SalesStatistics
     {
         private Form1 form1;
 
+        private DataManager dataManager;
+
         public Form2(Form1 _form1)
         {
             InitializeComponent();
 
             form1 = _form1;
+
+            dataManager = new DataManager();
         }
 
         private void textBoxForWritingData_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,6 +54,11 @@ namespace SalesStatistics
             Hide();
 
             form1.Show();
+        }
+
+        private void enterDataButton_Click(object sender, EventArgs e)
+        {
+            dataManager.DataSave(textBoxForWritingData.Text);
         }
     }
 }

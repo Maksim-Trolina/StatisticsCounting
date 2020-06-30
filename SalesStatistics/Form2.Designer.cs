@@ -53,6 +53,7 @@
             this.enterDataButton.TabIndex = 1;
             this.enterDataButton.Text = "Ввод";
             this.enterDataButton.UseVisualStyleBackColor = true;
+            this.enterDataButton.Click += new System.EventHandler(this.enterDataButton_Click);
             // 
             // startMenuButton
             // 
