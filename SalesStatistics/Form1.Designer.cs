@@ -28,13 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.writeDataButton = new System.Windows.Forms.Button();
+            this.statisticsCalculationButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // writeDataButton
+            // 
+            this.writeDataButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.writeDataButton.Location = new System.Drawing.Point(247, 200);
+            this.writeDataButton.Name = "writeDataButton";
+            this.writeDataButton.Size = new System.Drawing.Size(113, 44);
+            this.writeDataButton.TabIndex = 0;
+            this.writeDataButton.Text = "Записать данные";
+            this.writeDataButton.UseVisualStyleBackColor = true;
+            // 
+            // statisticsCalculationButton
+            // 
+            this.statisticsCalculationButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statisticsCalculationButton.Location = new System.Drawing.Point(454, 200);
+            this.statisticsCalculationButton.Name = "statisticsCalculationButton";
+            this.statisticsCalculationButton.Size = new System.Drawing.Size(113, 44);
+            this.statisticsCalculationButton.TabIndex = 1;
+            this.statisticsCalculationButton.Text = "Посчитать статистику";
+            this.statisticsCalculationButton.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.statisticsCalculationButton);
+            this.Controls.Add(this.writeDataButton);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button writeDataButton;
+        private System.Windows.Forms.Button statisticsCalculationButton;
     }
 }
 

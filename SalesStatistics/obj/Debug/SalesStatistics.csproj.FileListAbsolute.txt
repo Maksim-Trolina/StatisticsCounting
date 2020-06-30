@@ -1,0 +1,10 @@
+C:\Dev\Projects\SalesStatistics\SalesStatistics\bin\Debug\SalesStatistics.exe.config
+C:\Dev\Projects\SalesStatistics\SalesStatistics\bin\Debug\SalesStatistics.exe
+C:\Dev\Projects\SalesStatistics\SalesStatistics\bin\Debug\SalesStatistics.pdb
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.csprojAssemblyReference.cache
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.Form1.resources
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.Properties.Resources.resources
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.csproj.GenerateResource.cache
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.csproj.CoreCompileInputs.cache
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.exe
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.pdb
