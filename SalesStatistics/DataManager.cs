@@ -2,45 +2,61 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace SalesStatistics
 {
     public class DataManager
     {
-        private string path = "sasi.json";
+        private string pathJsonFile = "sasi.json";
 
         public void DataSave(string number, DateTime selectedDate)
         {
             decimal sum = Convert.ToDecimal(number);
 
-            var day = new DayData(DateTime.Now,sum);
+            string jsonString = ExtractData(pathJsonFile);
 
-            var data = new Data
-            {
-                daysData = new List<DayData>()
-            };
+            var data = GetData(jsonString, selectedDate);
 
-            Rewrite();
+            data.daysData.Add(new DayData(selectedDate, sum));
 
-            data.daysData.Add(day);
+            WriteData(data, pathJsonFile);
+        }
 
+        private void WriteData(Data data,string path)
+        {
             string jsonString = JsonSerializer.Serialize(data);
 
-            using (StreamWriter sw = new StreamWriter(path, true, Encoding.Default))
+            using (StreamWriter sw = new StreamWriter(path, false, Encoding.Default))
             {
                 sw.Write(jsonString);
             }
         }
 
-        private void Rewrite()
+        private Data GetData(string jsonString, DateTime date)
+        {
+            Data data;
+
+            if (jsonString == null)
+            {
+                data = new Data();
+
+                data.daysData = new List<DayData>();
+            }
+            else
+            {
+                data = ChangeData(jsonString, date);
+            }
+
+            return data;
+        }
+
+        private string ExtractData(string path)
         {
             if (!File.Exists(path))
             {
-                return;
+                return null;
             }
 
             string jsonString;
@@ -50,26 +66,18 @@ namespace SalesStatistics
                 jsonString = sr.ReadToEnd();
             }
 
+            return jsonString;
+        }
+
+        private Data ChangeData(string jsonString, DateTime date)
+        {
             var data = JsonSerializer.Deserialize<Data>(jsonString);
 
-            if(data.daysData.Count == 0)
-            {
-                return;
-            }
+            data.daysData = data.daysData.Where(x => x.Day.Day != date.Day || x.Day.Month != date.Month || x.Day.Year != date.Year)
+                .Select(x => x)
+                .ToList();
 
-            int count = data.daysData.Count;
-
-            if((DateTime.Now - data.daysData[count - 1].Day).Hours < 18)
-            {
-                data.daysData.RemoveAt(count - 1);
-
-                jsonString = JsonSerializer.Serialize(data);
-
-                using (StreamWriter sw = new StreamWriter(path, false, Encoding.Default))
-                {
-                    sw.Write(jsonString);
-                }
-            }
+            return data;
         }
     }
 }
