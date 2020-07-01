@@ -17,6 +17,11 @@ namespace SalesStatistics
             Profit = profit;
         }
 
+        public DayData()
+        {
+
+        }
+
         public DateTime Day { get; set; }
 
         public decimal Profit { get; set; }

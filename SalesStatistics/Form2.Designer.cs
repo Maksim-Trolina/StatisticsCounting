@@ -31,6 +31,9 @@
             this.textBoxForWritingData = new System.Windows.Forms.TextBox();
             this.enterDataButton = new System.Windows.Forms.Button();
             this.startMenuButton = new System.Windows.Forms.Button();
+            this.calendar = new System.Windows.Forms.MonthCalendar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxForWritingData
@@ -67,11 +70,43 @@
             this.startMenuButton.UseVisualStyleBackColor = true;
             this.startMenuButton.Click += new System.EventHandler(this.startMenuButton_Click);
             // 
+            // calendar
+            // 
+            this.calendar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.calendar.Location = new System.Drawing.Point(609, 97);
+            this.calendar.Name = "calendar";
+            this.calendar.TabIndex = 3;
+            this.calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(346, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Введите прибыль:";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateLabel.Location = new System.Drawing.Point(239, 118);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(0, 16);
+            this.dateLabel.TabIndex = 5;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.calendar);
             this.Controls.Add(this.startMenuButton);
             this.Controls.Add(this.enterDataButton);
             this.Controls.Add(this.textBoxForWritingData);
@@ -87,5 +122,8 @@
         private System.Windows.Forms.TextBox textBoxForWritingData;
         private System.Windows.Forms.Button enterDataButton;
         private System.Windows.Forms.Button startMenuButton;
+        private System.Windows.Forms.MonthCalendar calendar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label dateLabel;
     }
 }
