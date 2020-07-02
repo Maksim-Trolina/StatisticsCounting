@@ -40,7 +40,9 @@ namespace SalesStatistics
         {
             var data = dataManager.GetData();
 
-            labelStatisticsForDay.Text = "Самый прибыльный день недели: " + statistics.GetMostProfitableDayOfWeek(data);
+            labelStatisticsForDay.Text = "Самый прибыльный день недели за всё время: " + statistics.GetMostProfitableDayOfWeek(data);
+
+            labelForMonth.Text = "Самый прибыльный месяц за всё время: " + statistics.GetMostProfitableMonth(data);
         }
     }
 }
