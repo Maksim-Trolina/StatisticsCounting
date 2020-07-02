@@ -28,3 +28,4 @@ C:\Dev\Projects\SalesStatistics\SalesStatistics\bin\Debug\System.Text.Json.xml
 C:\Dev\Projects\SalesStatistics\SalesStatistics\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Dev\Projects\SalesStatistics\SalesStatistics\bin\Debug\System.ValueTuple.xml
 C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.csproj.CopyComplete
+C:\Dev\Projects\SalesStatistics\SalesStatistics\obj\Debug\SalesStatistics.Form3.resources

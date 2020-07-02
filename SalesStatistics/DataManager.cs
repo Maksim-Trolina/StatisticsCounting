@@ -15,13 +15,34 @@ namespace SalesStatistics
         {
             decimal sum = Convert.ToDecimal(number);
 
-            string jsonString = ExtractData(pathJsonFile);
+            var data = GetData();
 
-            var data = GetData(jsonString, selectedDate);
+            data = ChangeData(data, selectedDate);
+
+            if(data == null)
+            {
+                data = new Data();
+
+                data.daysData = new List<DayData>();
+            }
 
             data.daysData.Add(new DayData(selectedDate, sum));
 
             WriteData(data, pathJsonFile);
+        }
+
+        public Data GetData()
+        {
+            string jsonString = ExtractData(pathJsonFile);
+
+            if (jsonString == null)
+            {
+                return null;
+            }
+
+            var data = JsonSerializer.Deserialize<Data>(jsonString);
+
+            return data;
         }
 
         private void WriteData(Data data,string path)
@@ -32,24 +53,6 @@ namespace SalesStatistics
             {
                 sw.Write(jsonString);
             }
-        }
-
-        private Data GetData(string jsonString, DateTime date)
-        {
-            Data data;
-
-            if (jsonString == null)
-            {
-                data = new Data();
-
-                data.daysData = new List<DayData>();
-            }
-            else
-            {
-                data = ChangeData(jsonString, date);
-            }
-
-            return data;
         }
 
         private string ExtractData(string path)
@@ -69,9 +72,12 @@ namespace SalesStatistics
             return jsonString;
         }
 
-        private Data ChangeData(string jsonString, DateTime date)
+        private Data ChangeData(Data data, DateTime date)
         {
-            var data = JsonSerializer.Deserialize<Data>(jsonString);
+            if(data == null)
+            {
+                return null;
+            }
 
             data.daysData = data.daysData.Where(x => x.Day.Day != date.Day || x.Day.Month != date.Month || x.Day.Year != date.Year)
                 .Select(x => x)

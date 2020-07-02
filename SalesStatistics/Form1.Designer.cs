@@ -54,6 +54,7 @@
             this.statisticsCalculationButton.TabIndex = 1;
             this.statisticsCalculationButton.Text = "Посчитать статистику";
             this.statisticsCalculationButton.UseVisualStyleBackColor = true;
+            this.statisticsCalculationButton.Click += new System.EventHandler(this.statisticsCalculationButton_Click);
             // 
             // Form1
             // 
