@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Globalization;
+
 
 namespace SalesStatistics
 {
@@ -87,6 +84,52 @@ namespace SalesStatistics
             return month + separator + max.ToString();
         }
 
+        public string GetAverageValueByDayNumber(Data data,int day)
+        {
+            if(data == null)
+            {
+                return null;
+            }
+
+            var group = data.daysData.Where(x => x.Day.Day == day)
+                .Select(x => x.Profit);
+
+            if(group == null || group.Count() == 0)
+            {
+                return null;
+            }
+
+            decimal average = group.Average();
+
+            average = Math.Round(average, round);
+
+            return "С.п. равен: " + average.ToString();
+        }
+
+        public string GetAverageValueByDayOfWeek(Data data,string dayOfWeek)
+        {
+            if(data == null)
+            {
+                return null;
+            }
+
+            dayOfWeek = TranslateDayOfWeekToEnglish(dayOfWeek);
+
+            var group = data.daysData.Where(x => x.Day.DayOfWeek.ToString() == dayOfWeek)
+                .Select(x => x.Profit);
+
+            if(group == null || group.Count() == 0)
+            {
+                return null;
+            }
+
+            decimal average = group.Average();
+
+            average = Math.Round(average, round);
+
+            return "C.п. равен: " + average.ToString();
+        }
+
         private string GetMonth(int month)
         {
             switch (month)
@@ -126,6 +169,36 @@ namespace SalesStatistics
 
                 case 12:
                     return "Декабрь";
+
+                default:
+                    return null;
+            }
+        }
+
+        private string TranslateDayOfWeekToEnglish(string dayOfWeek)
+        {
+            switch (dayOfWeek)
+            {
+                case "Понедельник":
+                    return "Monday";
+
+                case "Вторник":
+                    return "Tuesday";
+
+                case "Среда":
+                    return "Wednesday";
+
+                case "Четверг":
+                    return "Thursday";
+
+                case "Пятница":
+                    return "Friday";
+
+                case "Суббота":
+                    return "Saturday";
+
+                case "Воскресенье":
+                    return "Sunday";
 
                 default:
                     return null;
