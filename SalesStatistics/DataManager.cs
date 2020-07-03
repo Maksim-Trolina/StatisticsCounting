@@ -9,7 +9,7 @@ namespace SalesStatistics
 {
     public class DataManager
     {
-        private string pathJsonFile = "sasi.json";
+        private string pathJsonFile = "StatisticalData.json";
 
         public void DataSave(string number, DateTime selectedDate)
         {
